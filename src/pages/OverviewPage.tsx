@@ -37,7 +37,7 @@ function statusBadgeType(status: TransactionStatus): BadgeType {
   return "danger";
 }
 
-export function OverviewPage({ t }: PageProps) {
+export function OverviewPage({ t, setPage }: PageProps) {
   const fmt = (v: number) => `$${(v / 1000).toFixed(1)}k`;
 
   const stats: StatCard[] = [
@@ -142,7 +142,10 @@ export function OverviewPage({ t }: PageProps) {
         <Card t={t}>
           <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 14 }}>
             <h3 style={{ color: t.text, fontWeight: 700, fontSize: 15, margin: 0 }}>Recent Transactions</h3>
-            <button style={{ background: "none", border: "none", color: t.accent, fontSize: 13, cursor: "pointer", fontWeight: 500 }}>
+            <button
+              onClick={() => setPage?.("transactions")}
+              style={{ background: "none", border: "none", color: t.accent, fontSize: 13, cursor: "pointer", fontWeight: 500 }}
+            >
               View all →
             </button>
           </div>

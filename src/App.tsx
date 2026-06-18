@@ -9,6 +9,7 @@ import {
   ProjectsPage,
   MessagesPage,
   CalendarPage,
+  TransactionsPage,
   SettingsPage,
   HelpPage,
 } from "./pages";
@@ -21,7 +22,7 @@ export default function App() {
   const renderPage = () => {
     switch (page) {
       case "overview":
-        return <OverviewPage t={t} />;
+        return <OverviewPage t={t} setPage={setPage} />;
       case "analytics":
         return <AnalyticsPage t={t} />;
       case "users":
@@ -32,12 +33,14 @@ export default function App() {
         return <MessagesPage t={t} />;
       case "calendar":
         return <CalendarPage t={t} />;
+      case "transactions":
+        return <TransactionsPage t={t} />;
       case "settings":
         return <SettingsPage t={t} isDark={isDark} setIsDark={setIsDark} />;
       case "help":
         return <HelpPage t={t} />;
       default:
-        return <OverviewPage t={t} />;
+        return <OverviewPage t={t} setPage={setPage} />;
     }
   };
 

@@ -4,5 +4,6 @@ export { UsersPage } from "./UsersPage";
 export { ProjectsPage } from "./ProjectsPage";
 export { MessagesPage } from "./MessagesPage";
 export { CalendarPage } from "./CalendarPage";
+export { TransactionsPage } from "./TransactionsPage";
 export { SettingsPage } from "./SettingsPage";
 export { HelpPage } from "./HelpPage";

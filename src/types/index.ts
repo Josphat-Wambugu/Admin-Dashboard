@@ -33,6 +33,7 @@ export type PageId =
   | "projects"
   | "messages"
   | "calendar"
+  | "transactions"
   | "settings"
   | "help";
 
@@ -73,6 +74,7 @@ export interface CardProps {
 /* ─── PAGE PROPS ─── */
 export interface PageProps {
   t: Theme;
+  setPage?: (id: PageId) => void;
 }
 
 export interface SettingsPageProps extends PageProps {
